@@ -1,1 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Spring Mount Day Boarding Play School in Krishna Nagar, Bharatpur — a safe, joyful environment for Nursery, LKG & UKG children. Est. 2014. Enquire today." />
+<title>Spring Mount Day Boarding Play School – Krishna Nagar, Bharatpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+<style>
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --sky:    #1B9ADE;
+  --sky-d:  #1378B0;
+  --sky-l:  #D9F0FA;
+  --sun:    #FFC83D;
+  --sun-d:  #E5A500;
+  --mint:   #56C596;
+  --mint-l: #D7F5E9;
+  --cream:  #FFFDF9;
+  --warm:   #FFF8EE;
+  --slate:  #2D3A4A;
+  --muted:  #607080;
+  --border: #E8EFF6;
+  --white:  #FFFFFF;
+  --radius-sm: 10px;
+  --radius:    18px;
+  --radius-lg: 28px;
+  --shadow-sm: 0 2px 8px rgba(27,154,222,.10);
+  --shadow:    0 8px 32px rgba(27,154,222,.14);
+  --shadow-lg: 0 20px 60px rgba(27,154,222,.18);
+  --ff-head: 'Fredoka', sans-serif;
+  --ff-body: 'DM Sans', sans-serif;
+  --trans: .28s cubic-bezier(.4,0,.2,1);
+}
 
+/* ── RESET & BASE ───────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--ff-body);
+  background: var(--cream);
+  color: var(--slate);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: var(--ff-body); border: none; }
+ul { list-style: none; }
+
+/* ── SCROLL ANIMATION ───────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-left  { opacity:0; transform: translateX(-40px); transition: opacity .65s ease, transform .65s ease; }
+.reveal-right { opacity:0; transform: translateX(40px);  transition: opacity .65s ease, transform .65s ease; }
+.reveal-left.visible, .reveal-right.visible { opacity:1; transform:none; }
+.delay-1 { transition-delay:.12s; }
+.delay-2 { transition-delay:.24s; }
+.delay-3 { transition-delay:.36s; }
+.delay-4 { transition-delay:.48s; }
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────── */
+h1,h2,h3,h4 { font-family: var(--ff-head); line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.6rem); font-weight: 600; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p  { color: var(--muted); font-size: 1rem; }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--ff-body);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--sky);
+  background: var(--sky-l);
+  padding: 4px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+/* ── BUTTONS ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 13px 28px;
+  border-radius: 100px;
+  transition: all var(--trans);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--sky);
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(27,154,222,.35);
+}
+.btn-primary:hover { background: var(--sky-d); box-shadow: 0 6px 26px rgba(27,154,222,.45); transform: translateY(-2px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-sun {
+  background: var(--sun);
+  color: var(--slate);
+  box-shadow: 0 4px 18px rgba(255,200,61,.40);
+}
+.btn-sun:hover { background: var(--sun-d); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--sky);
+  border: 2px solid var(--sky);
+}
+.btn-outline:hover { background: var(--sky); color: #fff; transform: translateY(-2px); }
+
+.btn-ghost {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.4);
+  backdrop-filter: blur(6px);
+}
+.btn-ghost:hover { background: rgba(255,255,255,.28); }
+
+/* ── LAYOUT HELPERS ─────────────────────────────────────── */
+.container { width: min(1160px, 92vw); margin-inline: auto; }
+.section { padding: 90px 0; }
+.section-alt { background: var(--warm); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+
+/* ── NAVBAR ─────────────────────────────────────────────── */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,253,249,.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--trans);
+}
+#navbar.scrolled { box-shadow: var(--shadow); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-icon {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, var(--sky) 0%, var(--mint) 100%);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 4px 14px rgba(27,154,222,.30);
+  flex-shrink: 0;
+}
+.logo-text h4 {
+  font-family: var(--ff-head);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--slate);
+  line-height: 1.1;
+}
+.logo-text span {
+  font-size: .72rem;
+  color: var(--muted);
+  font-weight: 400;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.nav-links a {
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color var(--trans);
+  position: relative;
+}
+.nav-links a::after {
+  content:'';
+  position:absolute; bottom:-4px; left:0;
+  width:0; height:2px;
+  background: var(--sky);
+  border-radius: 2px;
+  transition: width var(--trans);
+}
+.nav-links a:hover { color: var(--sky); }
+.nav-links a:hover::after { width:100%; }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  background: none;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--slate); border-radius: 2px;
+  transition: all var(--trans);
+}
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 70px 0 0 0;
+  background: var(--cream);
+  z-index: 99;
+  padding: 24px 20px 32px;
+  flex-direction: column;
+  gap: 4px;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--slate);
+  padding: 14px 4px;
+  border-bottom: 1px solid var(--border);
+  display: block;
+  transition: color var(--trans);
+}
+.mobile-menu a:hover { color: var(--sky); }
+.mobile-menu .btn {
+  margin-top: 16px;
+  width: 100%;
+  justify-content: center;
+  border-bottom: none;
+  padding: 14px 28px;
+}
+
+/* ── HERO ───────────────────────────────────────────────── */
+#hero {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 100px;
+  background: linear-gradient(160deg, #EFF9FF 0%, #FFFDF9 55%, #F0FBF4 100%);
+}
+.hero-blobs {
+  position: absolute;
+  inset: 0; pointer-events: none;
+}
+.hero-blobs svg { width:100%; height:100%; }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mint-l);
+  color: #2A9A70;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(86,197,150,.25);
+}
+.hero-badge span { font-size: .9rem; }
+.hero-title { margin-bottom: 20px; color: var(--slate); }
+.hero-title em {
+  font-style: normal;
+  color: var(--sky);
+  position: relative;
+}
+.hero-title em::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 100%; height: 5px;
+  background: var(--sun);
+  border-radius: 3px;
+  opacity: .6;
+}
+.hero-sub {
+  font-size: 1.08rem;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
+.hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .84rem; font-weight: 600; color: var(--slate);
+}
+.trust-dot { width:7px; height:7px; border-radius:50%; background: var(--mint); }
+
+/* Hero card */
+.hero-visual {
+  position: relative;
+  padding: 28px 32px 0 16px; /* top right bottom left — room for badges */
+}
+.hero-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+.hero-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: linear-gradient(145deg, #C5EAFA 0%, #A8E8CC 50%, #FFF0C0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+/* Illustrated playground scene */
+.playground-svg { width: 82%; max-width: 320px; }
+.hero-card-footer {
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border);
+}
+.hero-card-footer strong { font-family: var(--ff-head); font-size: 1rem; color: var(--slate); }
+.hero-card-footer span { font-size: .8rem; color: var(--muted); }
+.rating-chip {
+  display: flex; align-items: center; gap: 5px;
+  background: var(--sun);
+  color: var(--slate);
+  padding: 5px 10px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: .84rem;
+}
+/* floating badges — positioned relative to .hero-visual */
+.float-badge {
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  box-shadow: 0 8px 28px rgba(45,58,74,.18);
+  display: flex; align-items: center; gap: 8px;
+  font-size: .82rem; font-weight: 600; color: var(--slate);
+  white-space: nowrap;
+  animation: floatBob 3.5s ease-in-out infinite;
+  z-index: 10;
+}
+@keyframes floatBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+/* badge-1: top-right, overlapping the card's top-right corner */
+.float-badge-1 { top: 6px; right: 10px; animation-delay: .4s; }
+/* badge-2: mid-left, overlapping the card's left edge */
+.float-badge-2 { bottom: 90px; left: -4px; animation-delay: 1.1s; }
+.float-badge .badge-icon { font-size: 1.2rem; }
+
+/* Hamburger open state */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── STATS BANNER ───────────────────────────────────────── */
+#stats {
+  background: var(--sky);
+  padding: 28px 0;
+}
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+}
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 24px;
+  border-right: 1px solid rgba(255,255,255,.18);
+}
+.stat-item:last-child { border-right: none; }
+.stat-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,.18);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.stat-text strong {
+  display: block;
+  font-family: var(--ff-head);
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.1;
+}
+.stat-text span { font-size: .78rem; color: rgba(255,255,255,.75); }
+
+/* ── ABOUT ──────────────────────────────────────────────── */
+.pillar-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 0; }
+.pillar-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 22px 18px;
+  border: 1.5px solid var(--border);
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+  transition: box-shadow var(--trans), transform var(--trans);
+}
+.pillar-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+.pillar-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+.pillar-icon.sky  { background: var(--sky-l); }
+.pillar-icon.sun  { background: #FFF4D6; }
+.pillar-icon.mint { background: var(--mint-l); }
+.pillar-icon.rose { background: #FDEAE8; }
+.pillar-card h3 { margin-bottom: 6px; }
+.pillar-card p  { font-size: .9rem; }
+
+.about-img-block {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+.about-img-bg {
+  width: 100%;
+  aspect-ratio: 5/6;
+  background: linear-gradient(155deg, #C4E9FA 0%, #A5DDBD 60%, #FAECC5 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.about-stat-pill {
+  position: absolute;
+  bottom: 20px; right: 20px;
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.about-stat-pill strong { font-family: var(--ff-head); font-size: 2rem; color: var(--sky); }
+.about-stat-pill span  { display: block; font-size: .78rem; color: var(--muted); }
+.about-stat-pill2 {
+  position: absolute;
+  top: 20px; left: 20px;
+  background: var(--sun);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 10px;
+}
+.about-stat-pill2 strong { font-family: var(--ff-head); font-size: 1.1rem; color: var(--slate); }
+.about-stat-pill2 span  { font-size: .76rem; color: rgba(45,58,74,.7); }
+
+/* ── GALLERY ────────────────────────────────────────────── */
+#gallery { background: var(--warm); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: auto;
+  gap: 14px;
+  margin-top: 40px;
+}
+.g-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.g-item:nth-child(1) { grid-row: span 1; }
+.g-item:nth-child(5) { grid-column: span 2; min-height: 180px; }
+.g-item:nth-child(5) .g-placeholder { height: 100%; aspect-ratio: unset; }
+.g-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  transition: transform var(--trans);
+}
+.g-item:hover .g-placeholder { transform: scale(1.06); }
+.g-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(27,58,100,.55);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity var(--trans);
+  border-radius: var(--radius);
+}
+.g-item:hover .g-overlay { opacity: 1; }
+.g-overlay span { color: #fff; font-family: var(--ff-head); font-size: 1.1rem; font-weight: 600; }
+
+/* gallery colors */
+.gc1 { background: linear-gradient(135deg,#A8DEFA,#C5F2DC); }
+.gc2 { background: linear-gradient(135deg,#FAE3A8,#FADFC5); }
+.gc3 { background: linear-gradient(135deg,#C5EAF5,#DDFAEF); }
+.gc4 { background: linear-gradient(135deg,#F5C5E0,#FAD9C5); }
+.gc5 { background: linear-gradient(135deg,#C5D5FA,#D9C5FA); }
+.gc6 { background: linear-gradient(135deg,#D5FAC5,#C5FAE0); }
+.gc7 { background: linear-gradient(135deg,#FAC5C5,#FAE5C5); }
+
+/* ── FEATURES ───────────────────────────────────────────── */
+.feature-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  border: 1.5px solid var(--border);
+  transition: box-shadow var(--trans), transform var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+.feature-card::before {
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:4px;
+  background: linear-gradient(90deg, var(--sky), var(--mint));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--trans);
+}
+.feature-card:hover::before { transform: scaleX(1); }
+.feature-card:hover { box-shadow: var(--shadow); transform: translateY(-5px); }
+.feature-emoji { font-size: 2.2rem; margin-bottom: 16px; }
+.feature-card h3 { margin-bottom: 8px; font-size: 1.1rem; }
+.feature-card p { font-size: .88rem; }
+
+/* ── TESTIMONIALS ───────────────────────────────────────── */
+#testimonials { background: linear-gradient(160deg, #1378B0 0%, #1B9ADE 60%, #56C596 100%); }
+.testimonials-inner { text-align: center; }
+#testimonials h2 { color: #fff; margin-bottom: 12px; }
+#testimonials .section-label { background: rgba(255,255,255,.2); color: #fff; }
+#testimonials > .container > p { color: rgba(255,255,255,.8); margin-bottom: 48px; }
+.tcard-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.tcard {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: left;
+  transition: background var(--trans), transform var(--trans);
+}
+.tcard:hover { background: rgba(255,255,255,.2); transform: translateY(-4px); }
+.tcard-stars { color: var(--sun); font-size: 1rem; margin-bottom: 14px; }
+.tcard p { color: rgba(255,255,255,.88); font-size: .9rem; margin-bottom: 20px; }
+.tcard-author { display: flex; align-items: center; gap: 12px; }
+.t-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.ta1 { background: #FFF0C0; }
+.ta2 { background: #C5EAFA; }
+.ta3 { background: #D7F5E9; }
+.tcard-author strong { color: #fff; font-size: .88rem; }
+.tcard-author span   { color: rgba(255,255,255,.6); font-size: .76rem; }
+
+/* ── CONTACT ────────────────────────────────────────────── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+.contact-info h2 { margin-bottom: 16px; }
+.contact-info > p { margin-bottom: 32px; }
+
+.contact-channels { display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+.channel-btn {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--slate);
+  font-size: .95rem;
+  font-weight: 600;
+  transition: all var(--trans);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--ff-body);
+}
+.channel-btn .ch-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.channel-btn.call .ch-icon { background: var(--sky-l); }
+.channel-btn.whatsapp .ch-icon { background: #D7F5E9; }
+.channel-btn.directions .ch-icon { background: #FFF4D6; }
+.channel-btn:hover { border-color: var(--sky); background: var(--sky-l); transform: translateX(4px); }
+.channel-btn .ch-label { font-size: .75rem; font-weight: 400; color: var(--muted); display: block; }
+
+.map-placeholder {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #C4E9FA, #D7F5E9);
+  border-radius: var(--radius);
+  display: flex; flex-direction:column; align-items: center; justify-content: center;
+  gap: 8px;
+  font-size: 2rem;
+  color: var(--sky);
+  border: 1.5px dashed var(--border);
+}
+.map-placeholder span { font-family: var(--ff-body); font-size: .84rem; color: var(--muted); }
+
+/* ENQUIRY FORM */
+.enquiry-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-lg);
+  border: 1.5px solid var(--border);
+}
+.enquiry-card h3 { margin-bottom: 6px; }
+.enquiry-card > p { font-size: .88rem; margin-bottom: 26px; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--slate);
+  margin-bottom: 6px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: var(--ff-body);
+  font-size: .93rem;
+  color: var(--slate);
+  background: var(--cream);
+  outline: none;
+  transition: border-color var(--trans), box-shadow var(--trans);
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--sky);
+  box-shadow: 0 0 0 3px rgba(27,154,222,.12);
+}
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23607080' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.form-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: 100px;
+  font-family: var(--ff-head);
+  border: none;
+  cursor: pointer;
+  transition: all var(--trans);
+  box-shadow: 0 6px 22px rgba(27,154,222,.35);
+  margin-top: 6px;
+}
+.form-submit:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(27,154,222,.42); }
+.form-submit:active { transform: none; }
+
+/* ── FOOTER ─────────────────────────────────────────────── */
+footer {
+  background: var(--slate);
+  padding: 56px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+.footer-brand h4 {
+  font-family: var(--ff-head);
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.footer-brand p { font-size: .88rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+.footer-logo-row {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 14px;
+}
+.footer-logo-icon {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--sky), var(--mint));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+.footer-col h5 {
+  font-family: var(--ff-head);
+  color: rgba(255,255,255,.9);
+  font-size: .95rem;
+  margin-bottom: 16px;
+}
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a { color: rgba(255,255,255,.5); font-size: .88rem; transition: color var(--trans); }
+.footer-col ul li a:hover { color: var(--sky); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-bottom p { color: rgba(255,255,255,.38); font-size: .82rem; }
+.footer-chips { display: flex; gap: 10px; }
+.footer-chip {
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.5);
+  font-size: .76rem;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+/* ── FLOATING CTA ───────────────────────────────────────── */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+.fab {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 6px 22px rgba(0,0,0,.22);
+  cursor: pointer;
+  transition: all var(--trans);
+  border: none;
+  text-decoration: none;
+}
+.fab:hover { transform: scale(1.12); }
+.fab-wa { background: #25D366; }
+.fab-call { background: var(--sky); }
+
+/* ── WAVE DIVIDERS ──────────────────────────────────────── */
+.wave-divider { display: block; margin-bottom: -2px; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .grid-2, .hero-inner { grid-template-columns: 1fr; }
+  .hero-inner .hero-visual { order: -1; }
+  .float-badge-1 { right: 8px; }
+  .float-badge-2 { left: 8px; }
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .stat-item:nth-child(2) { border-right: none; }
+  .tcard-row { grid-template-columns: 1fr 1fr; }
+  .tcard-row .tcard:nth-child(3) { grid-column: span 2; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid > *:last-child { grid-column: span 2; }
+  .hero-sub { max-width: 100%; }
+  .about-img-bg { aspect-ratio: 4/3; }
+  .pillar-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 680px) {
+  .nav-links, .nav-actions .btn { display: none; }
+  .hamburger { display: flex; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.45rem; }
+  .section { padding: 56px 0; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12); padding: 12px 16px; }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.12) !important; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .g-item:nth-child(1) { grid-row: auto; }
+  .g-item:nth-child(5) { grid-column: auto; min-height: 0; }
+  .g-item:nth-child(5) .g-placeholder { aspect-ratio: 4/3; height: auto; }
+  .tcard-row { grid-template-columns: 1fr; }
+  .tcard-row .tcard:nth-child(3) { grid-column: auto; }
+  .pillar-grid { grid-template-columns: 1fr 1fr; }
+  .pillar-card { padding: 18px 14px; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid > *:last-child { grid-column: auto; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  .enquiry-card { padding: 24px 18px; }
+  .hero-card-footer { flex-wrap: wrap; gap: 8px; }
+  .float-badge { display: none; }
+  .contact-grid { gap: 32px; }
+  .hero-ctas { gap: 10px; }
+  .hero-ctas .btn { padding: 11px 20px; font-size: .88rem; }
+  .pillar-card { padding: 20px; }
+  /* Gallery photo count card on mobile */
+  .gallery-more-card { flex-direction: column; text-align: center; }
+  .gallery-more-card > div { text-align: center !important; }
+}
+@media (max-width: 420px) {
+  .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr; }
+  .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.12) !important; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .logo-text span { display: none; }
+  .section { padding: 44px 0; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .float-badge { animation: none; transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="#">
+      <div class="logo-icon">🌱</div>
+      <div class="logo-text">
+        <h4>Spring Mount</h4>
+        <span>Day Boarding Play School</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="btn btn-primary">Enquire Now</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#overview" onclick="toggleMenu()">Overview</a>
+  <a href="#features" onclick="toggleMenu()">Features</a>
+  <a href="#gallery"  onclick="toggleMenu()">Gallery</a>
+  <a href="#contact"  onclick="toggleMenu()">Contact</a>
+  <a href="#contact" class="btn btn-primary" onclick="toggleMenu()">✏️ Enquire Now</a>
+</div>
+
+<!-- ══ HERO ════════════════════════════════════════════════ -->
+<section id="hero">
+  <!-- bg blobs -->
+  <div class="hero-blobs" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="900" cy="80"  r="220" fill="rgba(27,154,222,.06)"/>
+      <circle cx="100" cy="500" r="180" fill="rgba(86,197,150,.07)"/>
+      <circle cx="600" cy="350" r="140" fill="rgba(255,200,61,.06)"/>
+      <ellipse cx="1100" cy="450" rx="160" ry="100" fill="rgba(27,154,222,.05)"/>
+    </svg>
+  </div>
+
+  <div class="container hero-inner">
+    <!-- Left -->
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span>🏫</span> Krishna Nagar, Bharatpur · Est. 2014
+      </div>
+      <h1 class="hero-title reveal delay-1">
+        Nurturing <em>Young Minds</em><br/>Since 2014
+      </h1>
+      <p class="hero-sub reveal delay-2">
+        A safe, joyful day boarding environment where little learners explore, create, and grow. Trusted by hundreds of Bharatpur families for over a decade.
+      </p>
+      <div class="hero-ctas reveal delay-3">
+        <a href="#gallery" class="btn btn-primary">🎬 Virtual Tour</a>
+        <a href="#contact" class="btn btn-sun">✏️ Enroll Today</a>
+      </div>
+      <div class="hero-trust reveal delay-4">
+        <div class="trust-item"><div class="trust-dot"></div>Day Boarding</div>
+        <div class="trust-item"><div class="trust-dot"></div>Safe &amp; Nurturing</div>
+        <div class="trust-item"><div class="trust-dot"></div>Play-Based Learning</div>
+      </div>
+    </div>
+
+    <!-- Right: visual card -->
+    <div class="hero-visual reveal-right">
+      <div class="float-badge float-badge-1">
+        <span class="badge-icon">⭐</span>
+        <div>
+          <strong style="display:block;font-size:.9rem;color:var(--slate)">4.8 / 5.0</strong>
+          <span style="font-size:.72rem;color:var(--muted)">Parent Rating</span>
+        </div>
+      </div>
+      <div class="float-badge float-badge-2">
+        <span class="badge-icon">👧</span>
+        <div>
+          <strong style="display:block;font-size:.9rem;color:var(--slate)">500+ Families</strong>
+          <span style="font-size:.72rem;color:var(--muted)">Enrolled Since 2014</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-img-placeholder">
+          <!-- Illustrated playground scene -->
+          <svg class="playground-svg" viewBox="0 0 320 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Ground / Turf -->
+            <rect x="0" y="170" width="320" height="70" rx="0" fill="#4DBF8A" opacity=".45"/>
+            <rect x="0" y="185" width="320" height="55" rx="0" fill="#56C596" opacity=".55"/>
+            <!-- Sun -->
+            <circle cx="270" cy="40" r="28" fill="#FFC83D" opacity=".85"/>
+            <circle cx="270" cy="40" r="20" fill="#FFD966"/>
+            <!-- Clouds -->
+            <ellipse cx="60" cy="35" rx="35" ry="18" fill="white" opacity=".7"/>
+            <ellipse cx="85" cy="28" rx="25" ry="14" fill="white" opacity=".7"/>
+            <ellipse cx="180" cy="22" rx="28" ry="14" fill="white" opacity=".6"/>
+            <!-- Slide -->
+            <rect x="30" y="90" width="12" height="80" rx="6" fill="#1B9ADE"/>
+            <rect x="80" y="90" width="12" height="80" rx="6" fill="#1B9ADE"/>
+            <line x1="55" y1="90" x2="55" y2="100" stroke="#1B9ADE" stroke-width="10" stroke-linecap="round"/>
+            <path d="M80 115 Q90 135 110 155 Q125 165 135 168" stroke="#FFC83D" stroke-width="10" stroke-linecap="round" fill="none"/>
+            <rect x="28" y="80" width="68" height="14" rx="7" fill="#56C596"/>
+            <!-- Swing set -->
+            <line x1="190" y1="60" x2="190" y2="170" stroke="#2D3A4A" stroke-width="6" stroke-linecap="round"/>
+            <line x1="250" y1="60" x2="250" y2="170" stroke="#2D3A4A" stroke-width="6" stroke-linecap="round"/>
+            <line x1="186" y1="62" x2="254" y2="62" stroke="#2D3A4A" stroke-width="6" stroke-linecap="round"/>
+            <!-- Swing 1 ropes and seat -->
+            <line x1="205" y1="62" x2="200" y2="120" stroke="#FFC83D" stroke-width="3"/>
+            <line x1="215" y1="62" x2="220" y2="120" stroke="#FFC83D" stroke-width="3"/>
+            <rect x="196" y="120" width="28" height="7" rx="3.5" fill="#E5A500"/>
+            <!-- Child on swing -->
+            <circle cx="210" cy="108" r="9" fill="#FFDBB0"/>
+            <rect x="204" y="117" width="12" height="18" rx="4" fill="#56C596"/>
+            <!-- Play horse -->
+            <ellipse cx="155" cy="162" rx="22" ry="12" fill="#E5A500"/>
+            <path d="M140 155 Q148 140 155 150 Q162 140 170 155" stroke="#FFC83D" stroke-width="3" fill="#FFC83D"/>
+            <circle cx="143" cy="148" r="5" fill="#FAECC5"/>
+            <rect x="145" y="170" width="4" height="18" rx="2" fill="#C8860A"/>
+            <rect x="162" y="170" width="4" height="18" rx="2" fill="#C8860A"/>
+            <!-- Child on horse -->
+            <circle cx="155" cy="145" r="8" fill="#FFDBB0"/>
+            <rect x="149" y="153" width="12" height="14" rx="4" fill="#1B9ADE"/>
+            <!-- Flowers -->
+            <circle cx="20" cy="180" r="5" fill="#FF85A1" opacity=".7"/>
+            <line x1="20" y1="185" x2="20" y2="200" stroke="#4DBF8A" stroke-width="2"/>
+            <circle cx="300" cy="182" r="4" fill="#FFC83D" opacity=".8"/>
+            <line x1="300" y1="186" x2="300" y2="198" stroke="#4DBF8A" stroke-width="2"/>
+            <circle cx="290" cy="178" r="3" fill="#56C596"/>
+          </svg>
+        </div>
+        <div class="hero-card-footer">
+          <div>
+            <strong>Spring Mount Play School</strong>
+            <span>Krishna Nagar, Bharatpur</span>
+          </div>
+          <div class="rating-chip">⭐ 4.8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ STATS BANNER ═════════════════════════════════════════ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item reveal">
+        <div class="stat-icon">🏫</div>
+        <div class="stat-text">
+          <strong>Est. 2014</strong>
+          <span>10+ Years of Excellence</span>
+        </div>
+      </div>
+      <div class="stat-item reveal delay-1">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-text">
+          <strong>4.8★ Rated</strong>
+          <span>By Bharatpur Parents</span>
+        </div>
+      </div>
+      <div class="stat-item reveal delay-2">
+        <div class="stat-icon">🛡️</div>
+        <div class="stat-text">
+          <strong>Safe Day Boarding</strong>
+          <span>Full-Day Care Facility</span>
+        </div>
+      </div>
+      <div class="stat-item reveal delay-3">
+        <div class="stat-icon">📚</div>
+        <div class="stat-text">
+          <strong>KG Curriculum</strong>
+          <span>Interactive &amp; Play-Based</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT / OVERVIEW ════════════════════════════════════ -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="grid-2" style="margin-bottom:48px">
+      <!-- Left: image -->
+      <div class="about-img-block reveal-left">
+        <div class="about-img-bg">
+          <svg viewBox="0 0 280 330" fill="none" style="width:78%;max-width:260px;" xmlns="http://www.w3.org/2000/svg">
+            <!-- Building -->
+            <rect x="30" y="100" width="220" height="180" rx="14" fill="#1B9ADE" opacity=".22"/>
+            <rect x="50" y="120" width="180" height="160" rx="10" fill="#fff" opacity=".55"/>
+            <!-- Roof -->
+            <path d="M20 105 L140 40 L260 105 Z" fill="#1B9ADE" opacity=".5"/>
+            <!-- School sign -->
+            <rect x="70" y="130" width="140" height="36" rx="8" fill="#FFC83D" opacity=".8"/>
+            <text x="140" y="153" font-family="Fredoka, sans-serif" font-size="13" fill="#2D3A4A" text-anchor="middle" font-weight="700">SPRING MOUNT</text>
+            <!-- Windows -->
+            <rect x="70"  y="180" width="44" height="38" rx="6" fill="#C4E9FA" opacity=".9"/>
+            <rect x="118" y="180" width="44" height="38" rx="6" fill="#C4E9FA" opacity=".9"/>
+            <rect x="166" y="180" width="44" height="38" rx="6" fill="#C4E9FA" opacity=".9"/>
+            <!-- Door -->
+            <rect x="108" y="228" width="64" height="52" rx="8" fill="#E5A500"/>
+            <circle cx="166" cy="255" r="4" fill="#2D3A4A" opacity=".5"/>
+            <!-- Ground -->
+            <rect x="0" y="278" width="280" height="52" rx="0" fill="#56C596" opacity=".45"/>
+            <rect x="0" y="295" width="280" height="35" rx="0" fill="#4DBF8A" opacity=".4"/>
+            <!-- Trees -->
+            <circle cx="30"  cy="252" r="26" fill="#56C596" opacity=".7"/>
+            <rect   x="26"  y="270" width="8" height="30" rx="4" fill="#4DBF8A"/>
+            <circle cx="250" cy="248" r="24" fill="#56C596" opacity=".7"/>
+            <rect   x="246" y="265" width="8" height="28" rx="4" fill="#4DBF8A"/>
+            <!-- Flag -->
+            <line x1="140" y1="28" x2="140" y2="8" stroke="#2D3A4A" stroke-width="2"/>
+            <path d="M140 8 L160 16 L140 24 Z" fill="#FFC83D"/>
+          </svg>
+          <div class="about-stat-pill2">
+            <span style="font-size:1.5rem">🎓</span>
+            <div>
+              <strong>KG & Play School</strong>
+              <span>Nursery · LKG · UKG</span>
+            </div>
+          </div>
+          <div class="about-stat-pill">
+            <strong>10+</strong>
+            <span>Years Trusted</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: text only -->
+      <div class="reveal-right">
+        <span class="section-label">About Us</span>
+        <h2 style="margin-bottom:16px">A Place Where Every Child <span style="color:var(--sky)">Blossoms</span></h2>
+        <p style="margin-bottom:28px">
+          Founded in 2014 in the heart of Krishna Nagar, Bharatpur, Spring Mount Day Boarding Play School was built on a simple belief — that the earliest years are the most precious. We create a warm, structured, and joyful space where Nursery, LKG, and UKG children discover the world at their own pace.
+        </p>
+        <p style="margin-bottom:0">
+          Our day boarding program means parents can trust that their child is safe, fed, engaged, and loved — all day long. Our trained staff blend structured learning with free play, art, music, and outdoor activity to nurture the whole child.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pillar cards: full width, 4 columns on desktop -->
+    <div class="pillar-grid">
+      <div class="pillar-card reveal">
+        <div class="pillar-icon sky">📖</div>
+        <div>
+          <h3>Early Education</h3>
+          <p>Age-appropriate curriculum covering language, numbers, and cognitive skills through play.</p>
+        </div>
+      </div>
+      <div class="pillar-card reveal delay-1">
+        <div class="pillar-icon sun">🏃</div>
+        <div>
+          <h3>Physical Play</h3>
+          <p>A vibrant outdoor play area with equipment that builds motor skills and confidence.</p>
+        </div>
+      </div>
+      <div class="pillar-card reveal delay-2">
+        <div class="pillar-icon rose">🎨</div>
+        <div>
+          <h3>Creative Arts</h3>
+          <p>Drawing, crafts, music, and dance sessions that spark imagination every single day.</p>
+        </div>
+      </div>
+      <div class="pillar-card reveal delay-3">
+        <div class="pillar-icon mint">🏠</div>
+        <div>
+          <h3>Day Boarding Care</h3>
+          <p>Nutritious meals, supervised rest, and a home-like environment from morning to evening.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-divider" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="background:var(--cream)">
+  <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z" fill="#FFF8EE"/>
+</svg>
+
+<!-- ══ FEATURES ══════════════════════════════════════════════ -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="section-label reveal">Why Choose Us</span>
+      <h2 class="reveal delay-1" style="max-width:480px;margin:0 auto 14px">Everything a Growing Child Needs</h2>
+      <p class="reveal delay-2" style="max-width:520px;margin:0 auto">From structured lessons to open-ended play, every detail of Spring Mount is designed around your child's happiness and growth.</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="feature-card reveal">
+        <div class="feature-emoji">🛡️</div>
+        <h3>Safe Environment</h3>
+        <p>CCTV-monitored premises, secured entry points, and trained staff ensure your child is always protected.</p>
+      </div>
+      <div class="feature-card reveal delay-1">
+        <div class="feature-emoji">🍱</div>
+        <h3>Nutritious Meals</h3>
+        <p>Home-cooked, hygienic meals served daily as part of the day boarding program — no tiffin worries.</p>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="feature-emoji">📐</div>
+        <h3>Structured Curriculum</h3>
+        <p>A balanced schedule of phonics, numbers, storytelling, and creative activities aligned with KG standards.</p>
+      </div>
+      <div class="feature-card reveal delay-1">
+        <div class="feature-emoji">🎭</div>
+        <h3>Extracurricular Activities</h3>
+        <p>Dance, drama, arts & crafts, and music woven into the weekly routine to spark every child's unique talent.</p>
+      </div>
+      <div class="feature-card reveal delay-2">
+        <div class="feature-emoji">👩‍🏫</div>
+        <h3>Expert Educators</h3>
+        <p>Qualified and caring teachers with years of early childhood education experience and genuine warmth.</p>
+      </div>
+      <div class="feature-card reveal delay-3">
+        <div class="feature-emoji">📲</div>
+        <h3>Parent Updates</h3>
+        <p>Regular activity updates, photos, and progress reports shared with parents to keep you connected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- wave -->
+<svg class="wave-divider" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="background:#FFF8EE">
+  <path d="M0,20 C360,60 720,0 1080,40 C1200,55 1320,15 1440,30 L1440,60 L0,60 Z" fill="var(--cream)"/>
+</svg>
+
+<!-- ══ GALLERY ════════════════════════════════════════════════ -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:40px;flex-wrap:wrap;gap:16px">
+      <div>
+        <span class="section-label reveal">Photo Gallery</span>
+        <h2 class="reveal delay-1" style="margin-top:6px">Life at Spring Mount</h2>
+      </div>
+      <div class="reveal delay-2" style="display:flex;align-items:center;gap:10px">
+        <div style="background:var(--sky-l);color:var(--sky);padding:6px 16px;border-radius:100px;font-size:.82rem;font-weight:600">
+          📷 69+ Photos
+        </div>
+        <a href="#contact" class="btn btn-outline" style="padding:10px 22px;font-size:.88rem">Book a Visit</a>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="g-item reveal" style="height:340px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPxhYB37Swf9lDAoyGIXjGhoVDZhZWIgVYi7ZC7X70WQ&s=10" 
+       alt="Outdoor Play Area" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+  <div class="g-overlay"><span>Outdoor Play Area</span></div>
+      </div>
+      <div class="g-item reveal" style="height:340px">
+  <img src="https://content3.jdmagicbox.com/comp/bharatpur/i1/9999p5644.5644.190312183219.b1i1/catalogue/spring-mount-day-boarding-play-school-bharatpur-city-bharatpur-kindergartens-s74dxz8hdr.jpg"
+       alt="Outdoor Play Area" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+  <div class="g-overlay"><span>Outdoor Play Area</span></div>
+      </div>
+      <div class="g-item reveal" style="height:680px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBJ7nGieLpeJC6v2p80IAI9VRrbneI-vApfoaCz5x_og&s=10" 
+       alt="Outdoor Play Area" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+  <div class="g-overlay"><span>Outdoor Play Area</span></div>
+      </div>
+      <div class="g-item reveal" style="height:340px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmqX_B2gCGHHiaPpd8FYu_MAtP9fbN7xq9NCsAiX5vYda22B8VBu-waeA&s=10" 
+       alt="Outdoor Play Area" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+  <div class="g-overlay"><span>Outdoor Play Area</span></div>
+      </div>
+      <div class="g-item reveal" style="height:340px">
+  <img src="https://content3.jdmagicbox.com/v2/comp/bharatpur/i1/9999p5644.5644.190312183219.b1i1/catalogue/spring-mount-day-boarding-play-school-bharatpur-city-bharatpur-kindergartens-mlav4tk432.jpg" 
+       alt="Outdoor Play Area" 
+       style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);" />
+  <div class="g-overlay"><span>Outdoor Play Area</span></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:24px;text-align:center">
+      <div class="gallery-more-card" style="display:inline-flex;align-items:center;gap:16px;background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 28px;box-shadow:var(--shadow-sm);flex-wrap:wrap;justify-content:center;max-width:100%">
+        <span style="font-size:1.6rem">🖼️</span>
+        <div style="text-align:left">
+          <strong style="font-family:var(--ff-head);font-size:1rem;color:var(--slate)">+69 More Photos on Our Profile</strong>
+          <span style="display:block;font-size:.82rem;color:var(--muted)">See the full life at Spring Mount — real moments, real joy.</span>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="padding:10px 22px;font-size:.88rem;white-space:nowrap">View All</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══════════════════════════════════════════ -->
+<section class="section" id="testimonials">
+  <div class="container" style="text-align:center">
+    <span class="section-label reveal">Parent Reviews</span>
+    <h2 class="reveal delay-1" style="color:#fff;margin-bottom:12px">What Bharatpur Families Say</h2>
+    <p class="reveal delay-2" style="color:rgba(255,255,255,.75);max-width:460px;margin:0 auto 48px">Real words from real parents who've trusted us with their most precious ones.</p>
+
+    <div class="tcard-row">
+      <div class="tcard reveal">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"My daughter started here at age 3 and the transformation is remarkable. She's confident, social, and loves going to school every single day. The teachers feel like family."</p>
+        <div class="tcard-author">
+          <div class="t-avatar ta1">👩</div>
+          <div>
+            <strong>Sunita Sharma</strong>
+            <span>Mother of Aaradhya, 4 yrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal delay-1">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"The day boarding facility is a blessing for working parents. I drop him at 8 AM and pick up at 5 PM knowing he is safe, fed, and learning. Cannot recommend highly enough."</p>
+        <div class="tcard-author">
+          <div class="t-avatar ta2">👨</div>
+          <div>
+            <strong>Rahul Gupta</strong>
+            <span>Father of Dev, 5 yrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="tcard reveal delay-2">
+        <div class="tcard-stars">★★★★★</div>
+        <p>"The outdoor play area is amazing. My son absolutely loves the horse and slides. The staff's attention to each child individually is what sets Spring Mount apart from others."</p>
+        <div class="tcard-author">
+          <div class="t-avatar ta3">👩</div>
+          <div>
+            <strong>Priya Agarwal</strong>
+            <span>Mother of Rishi, 4.5 yrs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ════════════════════════════════════════════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <span class="section-label reveal">Contact Us</span>
+      <h2 class="reveal delay-1" style="max-width:500px;margin:0 auto 12px">Let's Get Your Child Started</h2>
+      <p class="reveal delay-2" style="max-width:460px;margin:0 auto">Reach out for admissions, a school visit, or any question. We're here Monday – Saturday, 8 AM – 5 PM.</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: channels + map -->
+      <div class="reveal-left">
+        <h2 style="margin-bottom:12px;font-size:1.6rem">Get in Touch</h2>
+        <p style="margin-bottom:28px">Visit us or reach out through your preferred channel — we respond fast.</p>
+
+        <div class="contact-channels">
+          <a href="tel:+91 79 4269 5155" class="channel-btn call">
+            <div class="ch-icon">📞</div>
+            <div>
+              <span class="ch-label">Call us directly</span>
+              <strong>+91 79 4269 5155</strong>
+            </div>
+          </a>
+          <a href="https://wa.me/+91 86195 99348" target="_blank" class="channel-btn whatsapp">
+            <div class="ch-icon" style="background:#D7F5E9">💬</div>
+            <div>
+              <span class="ch-label">Chat on WhatsApp</span>
+              <strong>WhatsApp Enquiry</strong>
+            </div>
+          </a>
+          <a href="https://maps.app.goo.gl/7F9igCJfLi1Dhkxq6" target="_blank" class="channel-btn directions">
+            <div class="ch-icon" style="background:#FFF4D6">📍</div>
+            <div>
+              <span class="ch-label">Our location</span>
+              <strong>spring-mount, Bharatpur</strong>
+            </div>
+          </a>
+        </div>
+
+        <!-- Map placeholder -->
+        <div class="map-placeholder">
+          <div style="font-size:2.2rem">🗺️</div>
+          <span>spring-mount, Bharatpur, Rajasthan</span>
+          <a href="https://maps.app.goo.gl/7F9igCJfLi1Dhkxq6" target="_blank" class="btn btn-outline" style="padding:8px 20px;font-size:.82rem;margin-top:4px">Open in Google Maps</a>
+        </div>
+
+        <div style="margin-top:24px;padding:18px 20px;background:var(--mint-l);border-radius:var(--radius);display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:1.4rem">🕐</span>
+          <div>
+            <strong style="font-family:var(--ff-head);font-size:.95rem;color:var(--slate)">School Hours</strong>
+            <p style="font-size:.84rem;margin-top:4px">Mon – Sat: 8:00 AM – 5:00 PM<br/>Day Boarding available full day</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="enquiry-card reveal-right">
+        <h3>Admission Enquiry</h3>
+        <p>Fill the form and we'll call you back within 24 hours.</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent / Guardian Name *</label>
+            <input type="text" placeholder="e.g. Rahul Sharma" />
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" placeholder="+91 XXXXX XXXXX" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Child's Name</label>
+            <input type="text" placeholder="Your child's name" />
+          </div>
+          <div class="form-group">
+            <label>Child's Age *</label>
+            <select>
+              <option value="">Select age</option>
+              <option>1.5 – 2 years</option>
+              <option>2 – 3 years (Nursery)</option>
+              <option>3 – 4 years (LKG)</option>
+              <option>4 – 5 years (UKG)</option>
+              <option>5+ years</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Interested In</label>
+          <select>
+            <option value="">Select program</option>
+            <option>Day Boarding (Full Day)</option>
+            <option>Half Day Program</option>
+            <option>Nursery / Play Group</option>
+            <option>LKG</option>
+            <option>UKG</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (Optional)</label>
+          <textarea placeholder="Any specific questions or requirements..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">
+          🌱 Submit Enquiry
+        </button>
+        <p style="text-align:center;font-size:.78rem;margin-top:12px;color:var(--muted)">
+          We respect your privacy. No spam, ever.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo-icon">🌱</div>
+          <div>
+            <h4>Spring Mount</h4>
+            <span style="color:rgba(255,255,255,.45);font-size:.75rem">Day Boarding Play School</span>
+          </div>
+        </div>
+        <p>Nurturing young minds in Krishna Nagar, Bharatpur since 2014. A safe, joyful, and enriching start for every child.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#overview">About Us</a></li>
+          <li><a href="#features">Our Features</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#testimonials">Parent Reviews</a></li>
+          <li><a href="#contact">Admissions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact Info</h5>
+        <ul>
+          <li><a href="#">📍 Krishna Nagar, Bharatpur, Rajasthan</a></li>
+          <li><a href="tel:+91 79 4269 5155">📞 +91 79 4269 5155</a></li>
+          <li><a href="#">🕐 Mon–Sat: 8AM – 5PM</a></li>
+          <li><a href="#">🎓 Nursery · LKG · UKG</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Spring Mount Day Boarding Play School. All rights reserved.</p>
+      <div class="footer-chips">
+        <span class="footer-chip">Est. 2014</span>
+        <span class="footer-chip">Bharatpur</span>
+        <span class="footer-chip">KG School</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══ FLOATING ACTIONS ══════════════════════════════════════ -->
+<div class="floating-cta">
+  <a href="https://wa.me/+91 86195 99348" target="_blank" class="fab fab-wa" title="WhatsApp">💬</a>
+  <a href="tel:+91 79 4269 5155" class="fab fab-call" title="Call Now">📞</a>
+</div>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
+<script>
+// Navbar scroll shadow
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// Mobile menu
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.hamburger');
+  const isOpen = menu.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  // Prevent body scroll when menu is open
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+// Intersection Observer for scroll animations
+const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+// Form submit handler
+function handleSubmit(btn) {
+  const original = btn.innerHTML;
+  btn.innerHTML = '✅ Enquiry Submitted!';
+  btn.style.background = 'var(--mint)';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = original;
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3500);
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  const menu = document.getElementById('mobileMenu');
+  const hamburger = document.querySelector('.hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+    menu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+});
+
+// Close mobile menu on resize to desktop
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 680) {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger');
+    if (menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  }
+});
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return; // Skip empty anchors
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      // Close mobile menu if open
+      const menu = document.getElementById('mobileMenu');
+      if (menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+        document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
