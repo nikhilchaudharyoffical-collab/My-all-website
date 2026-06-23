@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 9%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 9%;
+    --primary: 22 95% 46%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 20% 96%;
+    --secondary-foreground: 220 30% 9%;
+    --muted: 40 20% 96%;
+    --muted-foreground: 220 8% 40%;
+    --accent: 40 20% 96%;
+    --accent-foreground: 220 30% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 15% 92%;
+    --input: 40 15% 92%;
+    --ring: 22 95% 46%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-text-primary font-body antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(232, 93, 4, 0.3);
+    color: inherit;
+  }
+
+  h1, h2, h3 {
+    @apply font-display uppercase;
+  }
+
+  h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+  }
+
+  @media (max-width: 767px) {
+    .text-stroke {
+      -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.7);
+    }
+  }
+}
