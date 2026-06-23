@@ -6,10 +6,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const stats = [
-  { icon: Users, value: 100+, suffix: '+', label: 'Happy Students Trained' },
+  { icon: Users, value: 100, suffix: '+', label: 'Happy Students Trained' },
   { icon: Star, value: 5.0, suffix: '', label: 'Star Rating on Justdial', decimal: true },
   { icon: Clock, value: 2021, suffix: '', label: 'Year Established' },
-  { icon: TrendingUp, value: 100+, suffix: '%', label: 'Success Rate' },
+  { icon: TrendingUp, value: 100, suffix: '%', label: 'Success Rate' },
 ]
 
 export default function StatsBand() {
